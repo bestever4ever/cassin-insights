@@ -82,13 +82,6 @@ function Landing() {
               Accurate market intelligence powered by verified professionals.
             </p>
 
-            <div className="mt-10 flex items-center justify-center gap-6 text-xs uppercase tracking-widest text-muted-foreground/80">
-              <span>Real Estate</span>
-              <span className="h-1 w-1 rounded-full bg-border" />
-              <span>Hedge Funds</span>
-              <span className="h-1 w-1 rounded-full bg-border" />
-              <span>Subscriptions</span>
-            </div>
           </div>
         </div>
       </section>
