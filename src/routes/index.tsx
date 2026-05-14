@@ -78,7 +78,7 @@ function Landing() {
             <h1 className="font-display text-5xl leading-[1.05] tracking-tight text-balance md:text-7xl">
               Cassin <span className="text-gold italic">Analytics</span>
             </h1>
-            <p className="mx-auto mt-6 max-w-2xl text-lg text-muted-foreground text-balance md:text-xl">
+            <p className="font-display italic mx-auto mt-6 max-w-2xl text-2xl text-muted-foreground text-balance md:text-3xl">
               Accurate market intelligence powered by verified professionals.
             </p>
 
