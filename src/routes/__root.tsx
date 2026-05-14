@@ -76,11 +76,15 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { title: "Cassin Analytics — Real Estate Market Intelligence" },
       { name: "description", content: "Accurate market intelligence powered by verified professionals." },
       { name: "author", content: "Cassin Analytics" },
-      { property: "og:title", content: "Cassin Analytics" },
+      { property: "og:title", content: "Cassin Analytics — Real Estate Market Intelligence" },
       { property: "og:description", content: "Accurate market intelligence powered by verified professionals." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary" },
       { name: "twitter:site", content: "@Lovable" },
+      { name: "twitter:title", content: "Cassin Analytics — Real Estate Market Intelligence" },
+      { name: "twitter:description", content: "Accurate market intelligence powered by verified professionals." },
+      { property: "og:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/a1eb43f8-5880-417e-bb5c-6dee003047a5/id-preview-3b3c571c--985cc7ba-cb8c-4eb0-a192-f36f5c94bfcc.lovable.app-1778794412509.png" },
+      { name: "twitter:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/a1eb43f8-5880-417e-bb5c-6dee003047a5/id-preview-3b3c571c--985cc7ba-cb8c-4eb0-a192-f36f5c94bfcc.lovable.app-1778794412509.png" },
     ],
     links: [
       {
