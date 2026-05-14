@@ -132,6 +132,29 @@ function Landing() {
           </p>
         </div>
         <SignupForm />
+
+        {/* CONTACT */}
+        <div className="mt-16 rounded-2xl border border-border bg-surface/60 p-8 text-center backdrop-blur">
+          <h3 className="font-display text-2xl md:text-3xl">Contact</h3>
+          <p className="mt-2 text-sm text-muted-foreground">
+            Questions or partnership inquiries? Reach out directly.
+          </p>
+          <div className="mt-5 flex flex-col items-center justify-center gap-3 sm:flex-row sm:gap-8">
+            <a
+              href="tel:+18473720773"
+              className="text-sm text-foreground hover:text-primary transition-colors"
+            >
+              (847) 372-0773
+            </a>
+            <span className="hidden sm:inline text-muted-foreground">·</span>
+            <a
+              href="mailto:bcassin13@icloud.com"
+              className="text-sm text-foreground hover:text-primary transition-colors"
+            >
+              bcassin13@icloud.com
+            </a>
+          </div>
+        </div>
       </section>
 
       {/* FOOTER */}
