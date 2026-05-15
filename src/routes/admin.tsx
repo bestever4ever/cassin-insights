@@ -151,7 +151,6 @@ function AdminPage() {
 }
 
 function AuthPanel() {
-  const [mode, setMode] = useState<"signin" | "signup">("signin");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [busy, setBusy] = useState(false);
@@ -159,43 +158,23 @@ function AuthPanel() {
   async function submit(e: React.FormEvent) {
     e.preventDefault();
     setBusy(true);
-    if (mode === "signup") {
-      const { error } = await supabase.auth.signUp({
-        email,
-        password,
-        options: { emailRedirectTo: `${window.location.origin}/admin` },
-      });
-      setBusy(false);
-      if (error) return toast.error(error.message);
-      toast.success("Account created. Check your email to confirm, then sign in.");
-      setMode("signin");
-    } else {
-      const { error } = await supabase.auth.signInWithPassword({ email, password });
-      setBusy(false);
-      if (error) return toast.error(error.message);
-      toast.success("Signed in.");
-    }
+    const { error } = await supabase.auth.signInWithPassword({ email, password });
+    setBusy(false);
+    if (error) return toast.error(error.message);
+    toast.success("Signed in.");
   }
 
   return (
     <div className="mx-auto max-w-md rounded-xl border border-border bg-surface/60 p-8 backdrop-blur">
-      <h1 className="font-display text-2xl">Admin {mode === "signup" ? "sign up" : "sign in"}</h1>
-      <p className="mt-1 text-sm text-muted-foreground">
-        {mode === "signup" ? "Create your admin account." : "Sign in to view signups."}
-      </p>
+      <h1 className="font-display text-2xl">Admin sign in</h1>
+      <p className="mt-1 text-sm text-muted-foreground">Sign in to view signups.</p>
       <form onSubmit={submit} className="mt-6 space-y-3">
         <Input type="email" placeholder="Email" value={email} onChange={(e) => setEmail(e.target.value)} required className="h-11" />
         <Input type="password" placeholder="Password" value={password} onChange={(e) => setPassword(e.target.value)} required minLength={6} className="h-11" />
         <Button type="submit" disabled={busy} className="h-11 w-full bg-gold text-primary-foreground hover:opacity-90">
-          {busy ? "…" : mode === "signup" ? "Create account" : "Sign in"}
+          {busy ? "…" : "Sign in"}
         </Button>
       </form>
-      <button
-        onClick={() => setMode(mode === "signup" ? "signin" : "signup")}
-        className="mt-4 w-full text-center text-xs text-muted-foreground hover:text-foreground"
-      >
-        {mode === "signup" ? "Already have an account? Sign in" : "Need an account? Sign up"}
-      </button>
     </div>
   );
 }
