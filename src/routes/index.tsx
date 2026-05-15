@@ -69,7 +69,7 @@ function Landing() {
           }}
         />
 
-        <div className="mx-auto max-w-6xl px-6 pt-20 pb-28 md:pt-32 md:pb-36">
+        <div className="mx-auto max-w-6xl px-6 pt-20 pb-12 md:pt-32 md:pb-16">
           <div className="mx-auto max-w-3xl text-center">
             <div className="mb-8 inline-flex items-center gap-2 rounded-full border border-border bg-surface/60 px-3 py-1 text-xs text-muted-foreground backdrop-blur">
               <span className="h-1.5 w-1.5 rounded-full bg-primary animate-pulse" />
