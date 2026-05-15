@@ -1,5 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { SignupForm } from "@/components/SignupForm";
+import { MoreInfoDialog } from "@/components/MoreInfoDialog";
 import { BarChart3, ShieldCheck, Building2, LineChart } from "lucide-react";
 import heroBg from "@/assets/hero-bg.jpg";
 
@@ -82,6 +83,7 @@ function Landing() {
               Accurate market intelligence powered by verified professionals.
             </p>
 
+            <MoreInfoDialog />
           </div>
         </div>
       </section>
