@@ -34,12 +34,18 @@ function Landing() {
 
       {/* NAV */}
       <header className="relative z-20">
-        <div className="mx-auto flex max-w-6xl items-center justify-between px-6 py-6">
+        <div className="relative mx-auto flex max-w-6xl items-center justify-between px-6 py-6">
           <div className="flex items-center gap-2">
             <div className="h-2 w-2 rounded-full bg-primary shadow-glow" />
             <span className="text-sm font-medium tracking-[0.2em] uppercase">
               Cassin <span className="text-muted-foreground">Analytics</span>
             </span>
+          </div>
+          <div className="pointer-events-none absolute left-1/2 top-1/2 hidden -translate-x-1/2 -translate-y-1/2 md:block">
+            <div className="inline-flex items-center gap-2 rounded-full border border-border bg-surface/60 px-3 py-1 text-xs text-muted-foreground backdrop-blur">
+              <span className="h-1.5 w-1.5 rounded-full bg-primary animate-pulse" />
+              Surveys launching soon — join the panel
+            </div>
           </div>
           <a
             href="#signup"
@@ -71,7 +77,7 @@ function Landing() {
 
         <div className="mx-auto max-w-6xl px-6 pt-20 pb-12 md:pt-32 md:pb-16">
           <div className="mx-auto max-w-3xl text-center">
-            <div className="mb-8 inline-flex items-center gap-2 rounded-full border border-border bg-surface/60 px-3 py-1 text-xs text-muted-foreground backdrop-blur">
+            <div className="mb-8 inline-flex items-center gap-2 rounded-full border border-border bg-surface/60 px-3 py-1 text-xs text-muted-foreground backdrop-blur md:hidden">
               <span className="h-1.5 w-1.5 rounded-full bg-primary animate-pulse" />
               Surveys launching soon — join the panel
             </div>
