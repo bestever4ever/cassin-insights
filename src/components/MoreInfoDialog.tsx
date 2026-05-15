@@ -94,8 +94,8 @@ export function MoreInfoDialog() {
   return (
     <Dialog>
       <DialogTrigger asChild>
-        <Button variant="outline" size="lg" className="mt-8 rounded-full border-border bg-surface/60 backdrop-blur">
-          <Info className="h-4 w-4" />
+        <Button variant="outline" size="sm" className="mt-8 h-8 rounded-full border-border bg-surface/60 px-4 text-xs backdrop-blur">
+          <Info className="h-3 w-3" />
           Get more info
         </Button>
       </DialogTrigger>
