@@ -15,8 +15,8 @@ export function SignupForm() {
 
   async function onSubmit(e: React.FormEvent) {
     e.preventDefault();
-    if (!email.trim() || !name.trim() || !role.trim() || !company.trim()) {
-      toast.error("Please fill in name, company, role, and email.");
+    if (!email.trim() || !name.trim() || !role.trim()) {
+      toast.error("Please fill in name, role, and email.");
       return;
     }
     setLoading(true);
@@ -24,7 +24,7 @@ export function SignupForm() {
       email: email.trim(),
       name: name.trim(),
       role: role.trim(),
-      company: company.trim(),
+      company: company.trim() || null,
     });
     setLoading(false);
     if (error) {
@@ -67,8 +67,7 @@ export function SignupForm() {
           className="h-12 bg-surface/80 border-border"
         />
         <Input
-          required
-          placeholder="Company"
+          placeholder="Company (optional)"
           value={company}
           onChange={(e) => setCompany(e.target.value)}
           className="h-12 bg-surface/80 border-border"
