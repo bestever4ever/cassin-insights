@@ -15,13 +15,16 @@ export function SignupForm() {
 
   async function onSubmit(e: React.FormEvent) {
     e.preventDefault();
-    if (!email) return;
+    if (!email.trim() || !name.trim() || !role.trim() || !company.trim()) {
+      toast.error("Please fill in name, company, role, and email.");
+      return;
+    }
     setLoading(true);
     const { error } = await supabase.from("survey_signups").insert({
       email: email.trim(),
-      name: name.trim() || null,
-      role: role.trim() || null,
-      company: company.trim() || null,
+      name: name.trim(),
+      role: role.trim(),
+      company: company.trim(),
     });
     setLoading(false);
     if (error) {
@@ -57,18 +60,21 @@ export function SignupForm() {
     >
       <div className="grid gap-4 sm:grid-cols-2">
         <Input
+          required
           placeholder="Full name"
           value={name}
           onChange={(e) => setName(e.target.value)}
           className="h-12 bg-surface/80 border-border"
         />
         <Input
-          placeholder="Company (optional)"
+          required
+          placeholder="Company"
           value={company}
           onChange={(e) => setCompany(e.target.value)}
           className="h-12 bg-surface/80 border-border"
         />
         <Input
+          required
           placeholder="Your role (e.g. Broker, PM, Analyst)"
           value={role}
           onChange={(e) => setRole(e.target.value)}
